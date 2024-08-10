@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Application-Name: MRI DICOM B-Values fix for XNAT
+Build-Date: Fri Jun 02 08:05:51 UTC 2023
+Build-Number: Manual
+Implementation-Version: 1.0.0-SNAPSHOT
+Implementation-Sha: 7a15287086
+Implementation-Sha-Full: 7a15287086710517898dda93a3206c0029fa2fb6
+Implementation-Commit: 0
+Implementation-LastTag: 1.8.3
+Implementation-Branch: master
+Implementation-CleanTag: false
+Implementation-Dirty: true
+

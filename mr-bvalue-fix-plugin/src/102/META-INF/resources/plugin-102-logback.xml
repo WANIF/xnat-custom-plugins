@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender class="ch.qos.logback.core.rolling.RollingFileAppender" name="plugin-102">
+        <append>false</append>
+        <file>${xnat.home}/logs/plugin-102.log</file>
+        <encoder>
+            <pattern>%d [%t] %-5p %c - %m%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${xnat.home}/logs/plugin-102.log.%d{yyyy-MM-dd}</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <logger additivity="false" level="INFO" name="org.unicorn.xnatx.plugin.Plugin102">
+        <appender-ref ref="plugin-102"/>
+    </logger>
+</configuration>
+
