@@ -57,6 +57,7 @@ dependencies {
     // Tim Rosenow
     implementation("org.nrg:dicomtools")
     implementation("org.nrg.dicom:mizer")
+    implementation("org.nrg.dicom.mizer:objects")
 
     implementation("org.nrg.xnat:web") {
         transitive = false
