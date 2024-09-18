@@ -64,7 +64,7 @@ public class CTTPDIsSessionNameProcessor extends AbstractArchiveProcessor {
                     subj = sessionData.getSubject();
                     folder = sessionData.getFolderName();
                 }
-                Object result = mizer.anonymize(dicomData, proj, subj, folder, script, true);
+                mizer.anonymize(dicomData, proj, subj, folder, script, true);
             }
         } catch (Throwable e) {
             log.debug("Dicom anonymization failed: " + dicomData, e);
