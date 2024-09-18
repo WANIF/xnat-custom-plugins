@@ -80,26 +80,3 @@ public class CTTPDIsSessionNameProcessor extends AbstractArchiveProcessor {
     }
 }
 
-	if(StringUtils.isNotBlank(script)){
-                String proj = "";
-                String subj = "";
-                String folder = "";
-                if(sessionData!=null){
-                    proj = sessionData.getProject();
-                    subj = sessionData.getSubject();
-                    folder = sessionData.getFolderName();
-                }
-                AnonymizationResult result = mizer.anonymize(dicomData, proj, subj, folder, script, true);
-                if (result instanceof AnonymizationResultError) {
-                    String msg = result.getMessage();
-                    log.debug("Dicom anonymization failed: {}: {}", dicomData, msg);
-                    throw new ServerException(Status.SERVER_ERROR_INTERNAL,msg);
-                }
-                if ( result instanceof AnonymizationResultNoOp) {
-                    return false;
-                }
-            }
-        } catch (Throwable e) {
-            log.debug("Dicom anonymization failed: " + dicomData, e);
-            throw new ServerException(Status.SERVER_ERROR_INTERNAL,e);
-        }
