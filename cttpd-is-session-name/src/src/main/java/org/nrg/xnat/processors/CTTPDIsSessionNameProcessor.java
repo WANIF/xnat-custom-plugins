@@ -27,10 +27,13 @@ public class CTTPDIsSessionNameProcessor extends AbstractArchiveProcessor {
         try {
             final String studyInstanceUID = dicomData.getString(Tag.StudyInstanceUID);
 
-
-            // Default Study script, replaced with this hard-coded script
+            // Default Study script, replaced with this hard-coded script below
             // String script = DefaultAnonUtils.getService().getStudyScript(studyInstanceUID);
-            String script = "version \"6.4\"\n";
+
+	    // ********** SCRIPT GOES HERE ************ //
+
+	    String script = """
+            version "6.4"
             // Create a new session ID, because XNAT needs session to be unique.
             // XNAT obtains it from Study Description (or StudyID prior to Paravision 360.3.4)
             // We save this session ID to (0012,0051) - Clinical Trial Time
@@ -41,20 +44,22 @@ public class CTTPDIsSessionNameProcessor extends AbstractArchiveProcessor {
             // Finally all else fails, PatientID:StudyDate
             // StudyDesc is (0008,1030)
             // StudyID is (0020,0010)
-            script = script + "PatientID := (0010,0020)\n";
-            script = script + "StudyDate := (0008,0020)\n";
+            PatientID := (0010,0020)
+            StudyDate := (0008,0020)
 
             // If StudyDesc doesn't exist, use StudyID instead
-            script = script + "(0008,1030) !~ \"[a-zA-Z_0-9]*\" ? StudyDesc := (0020,0010) : StudyDesc := (0008,1030)\n";
+            (0008,1030) !~ "[a-zA-Z_0-9]*" ? StudyDesc := (0020,0010) : StudyDesc := (0008,1030)
 
             // Fix Adam's staff's dumb typos: "Agrenica"
-            script = script + "PatientID := replace[ PatientID, \"Agrenica\", \"Argenica\" ]\n";
-            script = script + "StudyDesc := replace[ StudyDesc, \"Agrenica\", \"Argenica\" ]\n";
+            PatientID := replace[ PatientID, "Agrenica", "Argenica" ]
+            StudyDesc := replace[ StudyDesc, "Agrenica", "Argenica" ]
             // If StudyDesc does not contain PatientID, then we include StudyID at the start.
-            script = script + "TestString := format[ \".*{0}.*\", PatientID ]\n";
-            script = script + "StudyDesc !~ TestString ? StudyDesc := format[ \"{0}_{1}\", PatientID, StudyDesc ] : StudyDesc := StudyDesc\n";
-            script = script + "(0012,0051) := StudyDesc\n";
+            TestString := format[ ".*{0}.*", PatientID ]
+            StudyDesc !~ TestString ? StudyDesc := format[ "{0}_{1}", PatientID, StudyDesc ] : StudyDesc := StudyDesc
+            (0012,0051) := StudyDesc
+	    """;
 
+	    // ********** SCRIPT ENDS HERE ************ //
 
             if(StringUtils.isNotBlank(script)){
                 String proj = "";
