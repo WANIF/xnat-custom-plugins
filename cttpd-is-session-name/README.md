@@ -19,7 +19,7 @@ Once you have made this change, you should recompile the plugin and then copy it
 `/gradlew xnatDataBuilder xnatPluginJar`
 This will create the plugin file `build/libs/cttpd-is-session-name-plugin-1.0.0-SNAPSHOT-xpl.jar` (version names may change if you have configured this). Copy this to the XNAT plugin directory and restart XNAT.
 
-# Enabling the plugin on XNAT
+## Enabling the plugin on XNAT
 1. Go to the XNAT Swagger page (Administer -> Site Administration -> Miscellaneous).
 2. Go to archive-processor-instance-api and /processes/site/create
 3. Use the following details to create the processor.
