@@ -11,6 +11,7 @@ import org.nrg.dicom.mizer.objects.AnonymizationResultNoOp;
 import org.nrg.dicom.mizer.objects.AnonymizationResultReject;
 import org.nrg.dicom.mizer.service.MizerService;
 import org.nrg.xnat.entities.ArchiveProcessorInstance;
+import org.nrg.xnat.processors.AbstractArchiveProcessor;
 import org.nrg.xnat.helpers.merge.anonymize.DefaultAnonUtils;
 import org.nrg.xnat.helpers.prearchive.SessionData;
 import org.restlet.data.Status;
