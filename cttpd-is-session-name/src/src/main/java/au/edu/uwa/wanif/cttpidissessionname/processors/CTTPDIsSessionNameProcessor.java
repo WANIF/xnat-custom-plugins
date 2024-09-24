@@ -1,4 +1,4 @@
-package org.nrg.xnat.processors;
+package au.edu.uwa.wanif.plugins.cttpdissessionname.processors;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
