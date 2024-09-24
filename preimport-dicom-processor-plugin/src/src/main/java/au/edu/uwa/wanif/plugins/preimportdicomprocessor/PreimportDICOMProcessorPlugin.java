@@ -1,4 +1,4 @@
-package au.edu.uwa.wanif.plugins.preimportdicomprocessor
+package au.edu.uwa.wanif.plugins.preimportdicomprocessor;
 
 import au.edu.uwa.wanif.plugins.preimportdicomprocessor.preferences.PreimportDICOMProcessorPlugin;
 import org.nrg.framework.annotations.XnatPlugin;
