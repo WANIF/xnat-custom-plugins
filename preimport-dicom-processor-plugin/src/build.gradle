@@ -31,9 +31,9 @@ plugins {
 //       Maven naming conventions: https://maven.apache.org/guides/mini/guide-naming-conventions.html
 //       For example, if a group at Miskatonic University developed a plugin, the
 //       group might be "edu.miskatonic.imaging.xnat".
-group "au.edu.uwa.cmca.nif"
-version "1.0.0-SNAPSHOT"
-description "CTTPD Is Session Name plugin"
+group "au.edu.uwa.wanif"
+version "2.0.0alpha"
+description "Preimport DICOM processor plugin"
 
 // TODO: This provides access to all of these repositories for dependency resolution.
 repositories {
