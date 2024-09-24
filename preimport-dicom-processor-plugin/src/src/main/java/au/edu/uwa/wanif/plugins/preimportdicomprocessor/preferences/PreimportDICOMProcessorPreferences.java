@@ -31,13 +31,13 @@ public class PreimportDICOMProcessorPreferences extends AbstractPreferenceBean {
 
     @NrgPreference(defaultValue="false")
     public boolean getPreimportDICOMProcessorEnabled() {
-	    return getValue(PREIMPORTDICOMPROCESSOR_ENABLED);
+	    return getBooleanValue(PREIMPORTDICOMPROCESSOR_ENABLED);
     }
 
     public void setPreimportDICOMProcessorEnabled(final boolean preimportDICOMProcessorEnabled) {
 	    try {
 		    // Code to check and handle import processor status via REST
-		    set(preimportDICOMProcessorEnabled, PREIMPORTDICOMPROCESSOR_ENABLED);
+		    setBooleanValue(preimportDICOMProcessorEnabled, PREIMPORTDICOMPROCESSOR_ENABLED);
 	    } catch (InvalidPreferenceName e) {
 		    log.error("Invalid preference name " + PREIMPORTDICOMPROCESSOR_ENABLED + ": something is very wrong!", e);
 	    }
