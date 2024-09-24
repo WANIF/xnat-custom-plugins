@@ -37,7 +37,7 @@ public class PreimportDICOMProcessorPreferences extends AbstractPreferenceBean {
     public void setPreimportDICOMProcessorEnabled(final boolean preimportDICOMProcessorEnabled) {
 	    try {
 		    // Code to check and handle import processor status via REST
-		    set(preimportDICOMProcessorEnabled, PREIMPORTDICOMPROCESSOR_ENABLED)
+		    set(preimportDICOMProcessorEnabled, PREIMPORTDICOMPROCESSOR_ENABLED);
 	    } catch (InvalidPreferenceName e) {
 		    log.error("Invalid preference name " + PREIMPORTDICOMPROCESSOR_ENABLED + ": something is very wrong!", e);
 	    }
@@ -51,7 +51,7 @@ public class PreimportDICOMProcessorPreferences extends AbstractPreferenceBean {
 
      public void setPreimportDICOMProcessorScript(final String preimportDICOMProcessorScript) {
 	    try {
-                    set(preimportDICOMProcessorScript, PREIMPORTDICOMPROCESSOR_SCRIPT)
+                    set(preimportDICOMProcessorScript, PREIMPORTDICOMPROCESSOR_SCRIPT);
             } catch (InvalidPreferenceName e) {
                     log.error("Invalid preference name " + PREIMPORTDICOMPROCESSOR_SCRIPT + ": something is very wrong!", e);
             }
