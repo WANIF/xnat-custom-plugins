@@ -1,6 +1,6 @@
 package au.edu.uwa.wanif.plugins.preimportdicomprocessor;
 
-import au.edu.uwa.wanif.plugins.preimportdicomprocessor.preferences.PreimportDICOMProcessorPlugin;
+import au.edu.uwa.wanif.plugins.preimportdicomprocessor.preferences.PreimportDICOMProcessorPreferences;
 import org.nrg.framework.annotations.XnatPlugin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
