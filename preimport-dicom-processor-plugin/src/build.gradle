@@ -32,7 +32,7 @@ plugins {
 //       For example, if a group at Miskatonic University developed a plugin, the
 //       group might be "edu.miskatonic.imaging.xnat".
 group "au.edu.uwa.wanif"
-version "2.0.0alpha"
+version "2.0.0alpha.1"
 description "Preimport DICOM processor plugin"
 
 // TODO: This provides access to all of these repositories for dependency resolution.
