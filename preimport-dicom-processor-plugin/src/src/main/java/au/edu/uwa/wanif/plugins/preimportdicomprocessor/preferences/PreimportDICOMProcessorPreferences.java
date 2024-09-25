@@ -29,7 +29,7 @@ public class PreimportDICOMProcessorPreferences extends AbstractPreferenceBean {
 	    super(preferenceService, configFolderPaths, initPrefs);
     }
 
-    @NrgPreference(defaultValue="false")
+    @NrgPreference(defaultValue=false)
     public boolean getPreimportDICOMProcessorEnabled() {
 	    return getBooleanValue(PREIMPORTDICOMPROCESSOR_ENABLED);
     }
