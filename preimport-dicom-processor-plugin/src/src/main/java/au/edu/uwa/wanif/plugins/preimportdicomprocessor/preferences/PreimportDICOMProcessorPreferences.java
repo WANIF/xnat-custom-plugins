@@ -21,15 +21,15 @@ import java.util.Map;
 public class PreimportDICOMProcessorPreferences extends AbstractPreferenceBean {
 
     public static final String TOOL_ID = "preimportidcomprocessor";
-    public static final String PREIMPORTDICOMPROCESSOR_ENABLED = "PreimportDICOMProcessorEnabled";
-    public static final String PREIMPORTDICOMPROCESSOR_SCRIPT = "PreimportDICOMProcessorScript";
+    public static final String PREIMPORTDICOMPROCESSOR_ENABLED = "preimportDICOMProcessorEnabled";
+    public static final String PREIMPORTDICOMPROCESSOR_SCRIPT = "preimportDICOMProcessorScript";
 
     @Autowired
     protected PreimportDICOMProcessorPreferences(NrgPreferenceService preferenceService, ConfigPaths configFolderPaths, OrderedProperties initPrefs) {
 	    super(preferenceService, configFolderPaths, initPrefs);
     }
 
-    @NrgPreference(defaultValue=false)
+    @NrgPreference(defaultValue="false")
     public boolean getPreimportDICOMProcessorEnabled() {
 	    return getBooleanValue(PREIMPORTDICOMPROCESSOR_ENABLED);
     }
