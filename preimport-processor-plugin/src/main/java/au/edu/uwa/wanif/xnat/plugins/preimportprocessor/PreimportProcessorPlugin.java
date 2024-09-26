@@ -23,7 +23,9 @@ import org.nrg.framework.annotations.XnatPlugin;
 //import org.springframework.context.annotation.ComponentScan;
 
 @XnatPlugin(value = "PreimportProcessorPlugin", name = "Preimport Processor Plugin")
-@ComponentScan({"oau.edu.uwa.wanif.xnat.plugins.preimportprocessor.preferences"})
-//@Slf4j
+@ComponentScan({"aau.edu.uwa.wanif.xnat.plugins.preimportprocessor.processors"})
+// Below temporarily removed while testing
+//@ComponentScan({"au.edu.uwa.wanif.xnat.plugins.preimportprocessor.preferences",
+//"au.edu.uwa.wanif.xnat.plugins.preimportprocessor.processors"})
 public class PreimportProcessorPlugin {
 }
