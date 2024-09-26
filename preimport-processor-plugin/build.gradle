@@ -9,7 +9,7 @@
 
 buildscript {
     ext {
-        vXnat = "1.8.l0"
+        vXnat = "1.8.10"
     }
 }
 
@@ -20,6 +20,7 @@ plugins {
     id "jacoco"
     id "java"
     id "io.freefair.lombok" version "6.0.0-m2"
+//    id "io.spring.dependency-management" version "1.0.11.RELEASE"
     id "org.nrg.xnat.build.xnat-data-builder" version "1.8.10"
 }
 
@@ -30,8 +31,8 @@ plugins {
 //       For example, if a group at Miskatonic University developed a plugin, the
 //       group might be "edu.miskatonic.imaging.xnat".
 group "au.edu.uwa.wanif.xnat.plugins"
-version "2.0alpha"
-description "Preimport DICOM processor plugin for XNAT."
+version "2.0.0alpha.1"
+description "Preimport DICOM Processor Plugin"
 
 // TODO: This provides access to all of these repositories for dependency resolution.
 repositories {
