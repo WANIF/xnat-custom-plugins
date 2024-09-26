@@ -19,9 +19,10 @@ buildscript {
 plugins {
     id "jacoco"
     id "java"
-    id "io.freefair.lombok" version "6.0.0-m2"
+    id "com.palantir.git-version" version "0.12.1"
+    id "io.franzbecker.gradle-lombok" version "4.0.0"
     id "io.spring.dependency-management" version "1.0.11.RELEASE"
-    id "org.nrg.xnat.build.xnat-data-builder" version "1.8.10"
+    id "org.nrg.xnat.build.xnat-data-builder" version "1.8.3"
 }
 
 // TODO: Change the group and version to values appropriate for your plugin project.
