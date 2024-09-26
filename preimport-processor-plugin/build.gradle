@@ -31,9 +31,9 @@ plugins {
 //       Maven naming conventions: https://maven.apache.org/guides/mini/guide-naming-conventions.html
 //       For example, if a group at Miskatonic University developed a plugin, the
 //       group might be "edu.miskatonic.imaging.xnat".
-group "au.edu.uwa.cmca.nif"
-version "1.0.0-SNAPSHOT"
-description "CTTPD Is Session Name plugin"
+group "au.edu.uwa.wanif.xnat.plugins"
+version "2.0.0alpha.1"
+description "Preimport DICOM Processor Plugin"
 
 // TODO: This provides access to all of these repositories for dependency resolution.
 repositories {
@@ -54,9 +54,10 @@ dependencyManagement.imports {
 dependencies {
     implementation enforcedPlatform("org.nrg:parent:${vXnat}")
 
-    // Tim Rosenow
+    // Tim Rosenow additions
     implementation("org.nrg:dicomtools")
     implementation("org.nrg.dicom:mizer")
+
 
     implementation("org.nrg.xnat:web") {
         transitive = false

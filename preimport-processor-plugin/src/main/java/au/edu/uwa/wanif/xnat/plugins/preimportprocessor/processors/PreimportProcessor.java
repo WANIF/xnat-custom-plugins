@@ -1,4 +1,4 @@
-package org.nrg.xnat.processors;
+package au.edu.uwa.wanif.xnat.plugins.preimportprocessor.processors;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
@@ -15,12 +15,13 @@ import org.nrg.xnat.helpers.merge.anonymize.DefaultAnonUtils;
 import org.nrg.xnat.helpers.prearchive.SessionData;
 import org.restlet.data.Status;
 import org.springframework.stereotype.Component;
+import org.nrg.xnat.processors.AbstractArchiveProcessor;
 
 import java.util.Map;
 
 @Component
 @Slf4j
-public class CTTPDIsSessionNameProcessor extends AbstractArchiveProcessor {
+public class PreimportProcessor extends AbstractArchiveProcessor {
 
     @Override
     public boolean process(final DicomObject dicomData, final SessionData sessionData, final MizerService mizer, ArchiveProcessorInstance instance, Map<String, Object> aeParameters) throws ServerException{
@@ -86,4 +87,3 @@ public class CTTPDIsSessionNameProcessor extends AbstractArchiveProcessor {
         return true;
     }
 }
-
