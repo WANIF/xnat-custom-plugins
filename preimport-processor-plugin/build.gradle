@@ -54,6 +54,11 @@ dependencyManagement.imports {
 dependencies {
     implementation enforcedPlatform("org.nrg:parent:${vXnat}")
 
+    // Tim Rosenow additions
+    implementation("org.nrg:dicomtools")
+    implementation("org.nrg.dicom:mizer")
+
+
     implementation("org.nrg.xnat:web") {
         transitive = false
     }

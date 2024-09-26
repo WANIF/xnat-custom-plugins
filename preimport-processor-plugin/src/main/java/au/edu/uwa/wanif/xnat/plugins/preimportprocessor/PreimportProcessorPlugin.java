@@ -19,8 +19,8 @@ import org.nrg.framework.annotations.XnatPlugin;
 //import org.nrg.xnat.plugins.template.dcm.ConfigurableMappedDicomObjectIdentifier;
 //import org.nrg.xnat.plugins.template.dcm.ConfigurableMappedNumberExtractor;
 //import org.nrg.xnat.plugins.template.dcm.ConfigurableMappedProjectIdentifier;
-//import org.springframework.context.annotation.Bean;
-//import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 
 @XnatPlugin(value = "PreimportProcessorPlugin", name = "Preimport Processor Plugin")
 @ComponentScan({"au.edu.uwa.wanif.xnat.plugins.preimportprocessor.processors"})
