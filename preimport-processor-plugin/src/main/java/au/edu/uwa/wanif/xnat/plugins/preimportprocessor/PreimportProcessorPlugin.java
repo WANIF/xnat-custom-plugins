@@ -23,7 +23,7 @@ import org.nrg.framework.annotations.XnatPlugin;
 //import org.springframework.context.annotation.ComponentScan;
 
 @XnatPlugin(value = "PreimportProcessorPlugin", name = "Preimport Processor Plugin")
-@ComponentScan({"aau.edu.uwa.wanif.xnat.plugins.preimportprocessor.processors"})
+@ComponentScan({"au.edu.uwa.wanif.xnat.plugins.preimportprocessor.processors"})
 // Below temporarily removed while testing
 //@ComponentScan({"au.edu.uwa.wanif.xnat.plugins.preimportprocessor.preferences",
 //"au.edu.uwa.wanif.xnat.plugins.preimportprocessor.processors"})
