@@ -15,6 +15,7 @@ import org.nrg.xnat.helpers.merge.anonymize.DefaultAnonUtils;
 import org.nrg.xnat.helpers.prearchive.SessionData;
 import org.restlet.data.Status;
 import org.springframework.stereotype.Component;
+import org.nrg.xnat.processors.AbstractArchiveProcessor;
 
 import java.util.Map;
 
