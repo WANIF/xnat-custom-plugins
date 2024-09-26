@@ -21,7 +21,7 @@ import java.util.Map;
 
 @Component
 @Slf4j
-public class PreimportProcessorProcessor extends AbstractArchiveProcessor {
+public class PreimportProcessor extends AbstractArchiveProcessor {
 
     @Override
     public boolean process(final DicomObject dicomData, final SessionData sessionData, final MizerService mizer, ArchiveProcessorInstance instance, Map<String, Object> aeParameters) throws ServerException{
