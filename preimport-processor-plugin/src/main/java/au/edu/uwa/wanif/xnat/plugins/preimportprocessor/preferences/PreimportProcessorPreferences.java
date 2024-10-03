@@ -20,8 +20,16 @@ import java.util.Map;
 @Slf4j
 public class PreimportProcessorPreferences extends AbstractPreferenceBean {
 
-    public static final String TOOL_ID = "preimportprocessor"
+    public static final String TOOL_ID = "preimportprocessor";
+    public static final PREIMPORT_PROCESSOR_SCRIPT = "preimportProcessorSCRIPT";
+    
+    @Autowired
+    protected PreimportProcessorPreferences(NrgPreferenceService preferenceService, ConfigPaths configFolderPaths, OrderedProperties initPrefs) {
+	    super(preferenceService, configFolderPaths, initPrefs);
+    }
 
-
-
+    @NrgPreference(defaultValue="")
+    public String getPreimportProcessorScript() {
+	    return getValue(PREIMPORT_PROCESSOR_SCRIPT);
+    }
 } 

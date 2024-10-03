@@ -1,0 +1,31 @@
+root:
+  kind: tabs
+  groups:
+    preimportProcessorTabs: Preimport Processor
+  contents:
+    ${preimportProcessorTab}
+
+preimportProcessorTab:
+  kind: tab
+  group: preimportProcessorTabs
+  label: Preimport Processor Settings
+  contents:
+    ${preimportProcessorPreferences}
+
+preimportProcessorPreferences:
+  kind: panel.form
+  name: preimportProcessorPreferences
+  label: "Preimport Processor Settings"
+  method: POST
+  contentType: json
+  url: "/xapi/preimportprocessosr/preferences"
+  contents:
+    ${preimportProcessorScript}
+  
+preimportProcessorScript:
+  kind: panel.input.text
+  id: preimportProcessorScript
+  name: preimportProcessorScript
+  label: Preimport Processor Script
+  description: DICOMEdit script for the preimport processor.
+
