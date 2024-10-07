@@ -1,0 +1,34 @@
+// Create a new session ID, because XNAT needs session to be unique. 
+// XNAT obtains it from Study Description (or StudyID
+// if prior to PV360.3.4).
+
+// We save this session ID to (0012,0051) - Clinical Trial Time 
+// Point Description (CTTPD) - and use this as the import filter.
+
+// If StudyDesc exists, set CTTPD to PatientID:StudyDesc
+// If not, set it to PatientID:StudyID
+// Finally all else fails, PatientID:StudyDate
+version "6.4"
+// StudyDesc is (0008,1030)
+// StudyID is (0020,0010)
+PatientID := (0010,0020)
+StudyDate := (0008,0020)
+
+
+
+// If StudyDesc doesn't exist, use StudyID instead
+// (fix PV360<=3.2 bug).
+(0008,1030) !~ "[a-zA-Z_0-9]*" ? StudyDesc := (0020,0010) : StudyDesc := (0008,1030)
+
+// Fix Adam's staff's dumb typos: "Agrenica"
+PatientID := replace[ PatientID, "Agrenica", "Argenica" ]
+StudyDesc := replace[ StudyDesc, "Agrenica", "Argenica" ]
+
+// If StudyDesc does not contain PatientID,
+// then we include StudyID at the start.
+TestString := format[ ".*{0}.*", PatientID ]
+
+StudyDesc !~ TestString ? StudyDesc := format[ "{0}_{1}", PatientID, StudyDesc ] : StudyDesc := StudyDesc
+
+(0012,0051) := StudyDesc
+
